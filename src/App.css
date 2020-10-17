@@ -29,6 +29,9 @@ header nav ul {
   margin-right: 0;
   align-content: center;
 }
+header .selected{
+  border-top: 5px solid #53D155;
+}
 header nav ul li a {
   color: #fff;
   padding-left: 1rem;
@@ -46,23 +49,25 @@ header .search-box {
   justify-self: right;
 }
 header #search {
-  border:none;
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
-  border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
-  color: transparent;
+  outline: none;
+  border: none;
+  padding: 8px;
+  background-color: rgba(255,255,255,0.3);
+  border-radius: 30px;
+  color: black
 }
 main {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   text-align: center;
   height: 100vh;
   padding: 0 2rem;
   background: url('images/bg.jpg') no-repeat center center / cover;
 }
 main h1 {
+  margin-top: 20%;
   font-size: 6rem;
   line-height: 1;
   color: #fff;
@@ -73,11 +78,22 @@ main .cta{
   text-transform: uppercase;
   background: #53D155;
   color: #fff;
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
-  border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
+  border-radius: 30px;
   padding: 1rem 2rem;
   margin-top: 2rem;
   font-size: 1.5rem;
+}
+
+main .scroll {
+  display: inline-block;
+  outline: none;
+  border: none;
+  align-items: center;
+  text-transform: uppercase;
+  background: rgba(255,255,255,0.3);
+  color:black;
+  border-radius: 30px;
+  padding: 1rem 2rem;
+  margin-top: 2rem;
+  font-size: 0.5rem;
 }
