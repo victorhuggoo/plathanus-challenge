@@ -90,10 +90,16 @@ function App() {
       <section>
         <div id="abrirModal" className="modal">
           <div>
-          <a href="#fechar" title="Fechar" className="fechar">x</a>
+            <a href="#fechar" title="Fechar" className="fechar">x</a>
             <h2>Deseja trocar imagem do background?</h2>
-            <p>Seleciona uma imagem já existente ou faça upload de uma nova imagem</p>
-            <p>Você pode fazer qualquer coisa aqui, página de Login, pop-ups, ou formulários</p>
+            <p className="sub-title">Selecione uma imagem já existente ou faça upload de uma nova imagem</p>
+            <form id="form" enctype="multipart/form-data">
+              <input type="file" name="avatar" />
+              <br />
+              <button type="submit" name="upload">Upload</button>
+              <br />
+              <img id="avatar" />
+            </form>
           </div>
         </div>
       </section>

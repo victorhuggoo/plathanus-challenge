@@ -186,12 +186,23 @@ section #title, #content{
   opacity: 1;
   pointer-events: auto;
 }
-.modal > div {
+.modal div {
   width: 500px;
   position: relative;
   margin: 10% auto;
   padding: 15px 20px;
   background: #fff;
+}
+.modal div .sub-title{
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+.modal form{
+  width: 100vw;
+  align-self: center;
+}
+.modal form input{
+  background: greenyellow;
 }
 .fechar {
   position: absolute;
