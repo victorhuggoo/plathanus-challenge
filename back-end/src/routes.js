@@ -1,10 +1,10 @@
-const routes = require('express').Router();
+const routes = require('express').Router()
 const multer = require('multer')
 const multerConfig = require('./config/multer')
 
-routes.post('/upload', multer(multerConfig).single('image'), (req, res) => {
-    console.log(req.file);
-    return res.json({ message: 'Ok' })
-})
+const ImageController = require('./controller/ImageController')
+
+routes.get('/upload', ImageController.getFirstImage)
+routes.post('/upload', multer(multerConfig).single('image'), ImageController.uploadImage)
 
 module.exports = routes
