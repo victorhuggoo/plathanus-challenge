@@ -1,68 +1,67 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 align='center'>Plathanus Challenge</h1>
+<br>
+<h2>Sobre o teste</h2>
+<p>O teste consiste em replicar o mockup enviado por email, para replicar o mockup foram utilizadas as seguintes tecnologias:</p>
+<br>
+<h3>Front-end:</h3>
 
-## Available Scripts
+  * React
+  * HTML 5
+  * Css 3
+  * Axios
 
-In the project directory, you can run:
+  <h3>Back-end:</h3>
 
-### `yarn start`
+  * Node.js
+  * Express.js
+  * Knex.js
+  * SQLite3
+<hr>
+<h1 align='center'>Iniciando Projeto</h1>
+<br>
+<h2>Requisitos</h2>
+<p>Para rodar o projeto no seu computador você precisa ter os seguintes softwares em seu computador:</p>
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  * [Git](https://git-scm.com)
+  * [Node.js](https://nodejs.org/en/)
+<hr>
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+<h1 align="center">Rodando a aplicação back-end</h1>
 
-### `yarn test`
+```bash
+# Clone este repositório
+$ git clone https://github.com/victorhuggoo/plathanus-challenge
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Acesse a pasta do projeto no terminal/cmd
+$ cd plathanus-challenge
 
-### `yarn build`
+# Vá para a pasta server
+$ cd back-end
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Instale as dependências
+$ npm install
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+# Execute a aplicação em modo de desenvolvimento
+$ npm run dev
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# O servidor inciará na porta:3000 - acesse <http://localhost:3000>
+```
+<hr>
+<h1 align="center">Rodando a aplicação front-end</h1>
 
-### `yarn eject`
+```bash
+# O repositório já vai estar clonado então...
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# Acesse a pasta do projeto no terminal/cmd
+$ cd plathanus-challenge
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Vá para a pasta server
+$ cd front-end
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+# Instale as dependências
+$ npm install
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+# Execute a aplicação em modo de desenvolvimento
+$ npm run dev
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+# O servidor inciará na porta:3333 - acesse <http://localhost:3333>
