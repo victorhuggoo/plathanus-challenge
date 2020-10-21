@@ -4,7 +4,8 @@ const multerConfig = require('./config/multer')
 
 const ImageController = require('./controller/ImageController')
 
-routes.get('/upload', ImageController.getFirstImage)
+routes.get('/', ImageController.getFirstImage)
+routes.get('/upload', ImageController.getUrlImg)
 routes.post('/upload', multer(multerConfig).single('image'), ImageController.uploadImage)
 
 module.exports = routes
