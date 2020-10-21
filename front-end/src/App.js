@@ -6,6 +6,15 @@ import './App.css';
 function App() {
 
   useEffect(() => {
+    // var links = document.querySelector('.link')
+
+    // links.addEventListener('click', () => {
+    //   links.classList.remove('selected')
+    //   console.log(links);
+    // })
+
+    // console.log(links);
+
 
     window.onscroll = function () {
       "use strict";
