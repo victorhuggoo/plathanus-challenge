@@ -10,16 +10,15 @@ module.exports = {
     async create(req, res, next) {
 
         try {
-            const { file_name } = req.body
-            console.log(file_name);
-            const { crypto } = req.body
+            const { originalname } = req.file
+            const { filename } = req.file
             
-            const url_img = `http://localhost:3333/${crypto}`
+            const url_img = `http://localhost:3333/${filename}`
 
             await knex('image').insert({
-                file_name,
-                crypto,
-                url_img
+                file_name: originalname,
+                crypto: filename,
+                url_img: url_img
             });
 
             return res.status(201).send('foi')

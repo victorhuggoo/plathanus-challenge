@@ -6,10 +6,6 @@ const ImageController = require('./controller/ImageController')
 
 
 routes.get('/', ImageController.index)
-routes.post('/upload', ImageController.create)
-// routes.post('/upload', multer(multerConfig).single('image'), (req, res) => {
-//     console.log(req.file);
-//     return res.json({ message: 'Ok' })
-// })
-
+// routes.post('/upload', ImageController.create)
+routes.post('/upload', multer(multerConfig).single('image'), ImageController.create )
 module.exports = routes
