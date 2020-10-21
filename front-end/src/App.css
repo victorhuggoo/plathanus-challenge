@@ -9,55 +9,6 @@ body {
 a {
   text-decoration: none;
 }
-header {
-  display: grid;
-  grid-template-areas: 'menu logo searchBox';
-  grid-template-columns: 1fr 2fr 1fr;
-  align-items: center;
-  padding: 2rem;
-  background: transparent;
-  position: fixed;
-  width: 100%;
-  transition: all ease-in 0.3s;
-}
-header nav ul {
-  padding: 0;
-  grid-area: 'menu';
-  list-style: none;
-  display: flex;
-  min-width: 400px;
-  margin-right: 0;
-  align-content: center;
-}
-header .selected{
-  margin-left: -5px;
-  border-top: 5px solid #53D155;
-}
-header nav ul li a {
-  color: #fff;
-  padding-left: 1rem;
-  font-size: 1.15rem;
-}
-header .logo{
-  text-align: center;
-  grid-area:'logo';
-}
-header .logo img {
-  width: 250px;
-}
-header .search-box {
-  grid-area: 'searchBox';
-  justify-self: right;
-  padding: 8px;
-  background-color: rgba(255,255,255,0.3);
-  border-radius: 30px;
-}
-header #search {
-  outline: none;
-  border: none;
-  color: black;
-  background-color: transparent;
-}
 main {
   display: flex;
   flex-direction: column;
@@ -166,54 +117,4 @@ section #title, #content{
 }
 #content div{
   padding: 25px;
-}
-.modal {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: rgba(0,0,0,0.8);
-  z-index: 99999;
-  opacity:0;
-  -webkit-transition: opacity 400ms ease-in;
-  -moz-transition: opacity 400ms ease-in;
-  transition: opacity 400ms ease-in;
-  pointer-events: none;
-}
-.modal:target {
-  opacity: 1;
-  pointer-events: auto;
-}
-.modal div {
-  width: 500px;
-  position: relative;
-  margin: 10% auto;
-  padding: 15px 20px;
-  background: #fff;
-}
-.modal div .sub-title{
-  margin-top: 10px;
-  margin-bottom: 40px;
-}
-.modal form{
-  width: 100vw;
-  align-self: center;
-}
-.modal form input{
-  background: greenyellow;
-}
-.fechar {
-  position: absolute;
-  width: 30px;
-  right: -15px;
-  top: -20px;
-  text-align: center;
-  line-height: 30px;
-  margin-top: 5px;
-  background: #ff4545;
-  border-radius: 50%;
-  font-size: 16px;
-  color: #8d0000;
 }

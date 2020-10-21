@@ -1,20 +1,14 @@
 import React, { useEffect } from 'react';
-import logo from './images/logo.png';
-import { FaCameraRetro, FaTachometerAlt, FaBriefcase, FaSearch, FaArrowDown } from 'react-icons/fa'
+import { FaCameraRetro, FaTachometerAlt, FaBriefcase, FaArrowDown } from 'react-icons/fa'
+
+import Header from './components/Header/Header'
+import Modal from './components/Modal/Modal'
+
 import './App.css';
 
 function App() {
 
   useEffect(() => {
-    // var links = document.querySelector('.link')
-
-    // links.addEventListener('click', () => {
-    //   links.classList.remove('selected')
-    //   console.log(links);
-    // })
-
-    // console.log(links);
-
 
     window.onscroll = function () {
       "use strict";
@@ -34,23 +28,7 @@ function App() {
   return (
 
     <div id="root">
-      <header id="header">
-        <nav>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#whatwedo">What we do?</a></li>
-            <li><a href="javascript:void(0)">Testimonial</a></li>
-            <li><a href="#abrirModal">Config</a></li>
-          </ul>
-        </nav>
-        <div className="logo">
-          <img src={logo} alt="" />
-        </div>
-        <div className="search-box">
-          <input type="text" name="search" id="search" placeholder="Search..." />
-          <FaSearch />
-        </div>
-      </header>
+      <Header/>
       <section>
         <main>
           <div>
@@ -89,18 +67,7 @@ function App() {
       </section>
       <section>
         <div id="abrirModal" className="modal">
-          <div>
-            <a href="#fechar" title="Fechar" className="fechar">x</a>
-            <h2>Deseja trocar imagem do background?</h2>
-            <p className="sub-title">Selecione uma imagem já existente ou faça upload de uma nova imagem</p>
-            <form id="form" enctype="multipart/form-data">
-              <input type="file" name="avatar" />
-              <br />
-              <button type="submit" name="upload">Upload</button>
-              <br />
-              <img id="avatar" />
-            </form>
-          </div>
+        <Modal />
         </div>
       </section>
     </div>

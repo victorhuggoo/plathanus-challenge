@@ -1,0 +1,49 @@
+header {
+    display: grid;
+    grid-template-areas: 'menu logo searchBox';
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    padding: 2rem;
+    background: transparent;
+    position: fixed;
+    width: 100%;
+    transition: all ease-in 0.3s;
+  }
+  header nav ul {
+    padding: 0;
+    grid-area: 'menu';
+    list-style: none;
+    display: flex;
+    min-width: 400px;
+    margin-right: 0;
+    align-content: center;
+  }
+  header .selected{
+    margin-left: -5px;
+    border-top: 5px solid #53D155;
+  }
+  header nav ul li a {
+    color: #fff;
+    padding-left: 1rem;
+    font-size: 1.15rem;
+  }
+  header .logo{
+    text-align: center;
+    grid-area:'logo';
+  }
+  header .logo img {
+    width: 250px;
+  }
+  header .search-box {
+    grid-area: 'searchBox';
+    justify-self: right;
+    padding: 8px;
+    background-color: rgba(255,255,255,0.3);
+    border-radius: 30px;
+  }
+  header #search {
+    outline: none;
+    border: none;
+    color: black;
+    background-color: transparent;
+  }
