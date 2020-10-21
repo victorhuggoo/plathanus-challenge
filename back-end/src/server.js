@@ -1,16 +1,13 @@
 const express = require('express')
 const routes = require('./routes')
+const cors = require('cors')
 const path = require('path')
-
 
 const app = express()
 
-
-
-app.use(routes)
+app.use(cors())
 app.use(express.json())
 
-
-app.use(require('./routes'))
+app.use(routes)
 
 app.listen(3333, () => console.log({ message: 'Connected' }))
