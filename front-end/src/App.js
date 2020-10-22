@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { useHistory } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 import { FaCameraRetro, FaTachometerAlt, FaBriefcase, FaArrowDown } from 'react-icons/fa'
 
@@ -9,37 +9,38 @@ import img from './images/bg.jpg'
 
 import './App.css';
 
-const initialValue = {
-  file_name: '',
-  crypto: '',
-  url_name: ''
-}
-
-var erer = '';
+var valuesImg = '';
 
 function App(props) {
   const [uploadImg, setUploadImg] = useState(img)
-  const [values, setValues] = useState({values: ''})
-  const history = useHistory()
 
+  function getBgImg() {
+    axios.get("http://localhost:3333/")
+      .then((response) => {
+        setUploadImg(response.data[12].url_img)
+      })
+  }
 
   function onChange(e) {
-      let formdata = new FormData()
-      const imagedata = e.target.files[0];
-      formdata.append('bg', imagedata)
-      console.log(formdata.get('bg'));
-      erer = imagedata
+    const imagedata = e.target.files[0];
+    valuesImg = imagedata
+    if (valuesImg) {
+      document.querySelector("#enviarArquivo").innerHTML = valuesImg.name
+    } else {
+      document.querySelector("#enviarArquivo").innerHTML = 'Enviar Arquivo'
+    }
   }
 
   function onClick(ev) {
     ev.preventDefault()
     let formdata = new FormData()
-    formdata.append('image', erer, erer.name)
+    formdata.append('image', valuesImg, valuesImg.name)
     console.log(formdata)
-    axios.put('http://localhost:3333/upload/1', formdata)
-    .then((response) => {
-      history.push('/')
-    })
+    axios.post('http://localhost:3333/upload/', formdata)
+      .then((response) => {
+          getBgImg();
+          window.location.href('http://localhost:3000/')
+      })
   }
 
   useEffect(() => {
@@ -100,14 +101,14 @@ function App(props) {
       </section>
       <section>
         <div id="abrirModal" className="modal">
-          <div>
+          <div id="div-modal">
             <a href="#fechar" title="Fechar" className="fechar">x</a>
             <h2>Deseja trocar imagem do background?</h2>
-            <p className="sub-title">Selecione uma imagem já existente ou faça upload de uma nova imagem</p>
+            <p className="sub-title">Faça upload de uma nova imagem</p>
             <form id="form" method="post" enctype="multipart/form-data">
               <div class="input">
-                <label for="image">Enviar arquivo</label>
-                <input type="file" name="image" onChange={onChange}/>
+                <label id="enviarArquivo" for="image">Enviar arquivo</label>
+                <input type="file" accept=".jpg, .png, .gif, .jpeg" name="image" onChange={onChange} />
               </div>
               <br />
               <div className="submit">
