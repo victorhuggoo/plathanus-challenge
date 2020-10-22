@@ -18,7 +18,6 @@ function Main() {
   function getBgImg() {
     axios.get("http://localhost:3333/")
       .then((response) => {
-        console.log(response.data[0].url_img);
         setUploadImg(response.data[0].url_img)
       })
   }
@@ -37,7 +36,6 @@ function Main() {
     ev.preventDefault()
     let formdata = new FormData()
     formdata.append('image', valuesImg, valuesImg.name)
-    console.log(formdata)
     axios.put('http://localhost:3333/upload/1', formdata)
       .then((response) => {
           getBgImg();
