@@ -1,15 +1,48 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom'
+import axios from 'axios'
 import { FaCameraRetro, FaTachometerAlt, FaBriefcase, FaArrowDown } from 'react-icons/fa'
 
 import Header from './components/Header/Header'
-import Modal from './components/Modal/Modal'
+
+import img from './images/bg.jpg'
 
 import './App.css';
 
-function App() {
+const initialValue = {
+  file_name: '',
+  crypto: '',
+  url_name: ''
+}
+
+var erer = '';
+
+function App(props) {
+  const [uploadImg, setUploadImg] = useState(img)
+  const [values, setValues] = useState({values: ''})
+  const history = useHistory()
+
+
+  function onChange(e) {
+      let formdata = new FormData()
+      const imagedata = e.target.files[0];
+      formdata.append('bg', imagedata)
+      console.log(formdata.get('bg'));
+      erer = imagedata
+  }
+
+  function onClick(ev) {
+    ev.preventDefault()
+    let formdata = new FormData()
+    formdata.append('image', erer, erer.name)
+    console.log(formdata)
+    axios.put('http://localhost:3333/upload/1', formdata)
+    .then((response) => {
+      history.push('/')
+    })
+  }
 
   useEffect(() => {
-
     window.onscroll = function () {
       "use strict";
       let header = document.querySelector("header");
@@ -28,9 +61,9 @@ function App() {
   return (
 
     <div id="root">
-      <Header/>
+      <Header />
       <section>
-        <main>
+        <main style={{ background: `url(${uploadImg}) no-repeat center center / cover` }}>
           <div>
             <h1>Art is Eternal Happiness</h1>
             <a href="#" className="cta">WORK WITH US</a>
@@ -67,7 +100,22 @@ function App() {
       </section>
       <section>
         <div id="abrirModal" className="modal">
-        <Modal />
+          <div>
+            <a href="#fechar" title="Fechar" className="fechar">x</a>
+            <h2>Deseja trocar imagem do background?</h2>
+            <p className="sub-title">Selecione uma imagem já existente ou faça upload de uma nova imagem</p>
+            <form id="form" method="post" enctype="multipart/form-data">
+              <div class="input">
+                <label for="image">Enviar arquivo</label>
+                <input type="file" name="image" onChange={onChange}/>
+              </div>
+              <br />
+              <div className="submit">
+                <button className="salvar" onClick={onClick} name="upload">Upload</button>
+              </div>
+              <br />
+            </form>
+          </div>
         </div>
       </section>
     </div>
