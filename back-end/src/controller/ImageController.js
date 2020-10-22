@@ -32,7 +32,7 @@ module.exports = {
             const { originalname, filename } = req.file
             const { id } = req.params;
 
-            const url_img = `http://localhost:3333/image/${filename}`;
+            const url_img = `http://localhost:3333/images/${filename}`;
 
             await knex('image')
                 .update({ file_name: originalname,
